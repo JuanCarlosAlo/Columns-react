@@ -1,17 +1,22 @@
-import { StyledCardContainer } from "./styles"
+import { StyledCardContainer, StyledImgCard, StyledNameContainer, StyledNameText, StyledQuote, StyledText, StyledUserContainer } from "./styles"
 
-const CardContainer=({profileImg,cardname,quote,fullText,bgColorCard})=>{
+const CardContainer=({profileImg,cardname,quote,fullText,bgColorCard,column,row,quoteColor,textColor,bgImg})=>{
     return(
  
-    <StyledCardContainer bgColorCard={bgColorCard}>
-        <img src={profileImg} alt="" />
-        <div>
-            <p>{cardname}</p>
-            <p>Verified Graduate</p>
-        </div>
+    <StyledCardContainer bgColorCard={bgColorCard} column={column} row={row} bgImg={bgImg}>
+       
+        <StyledUserContainer>
+        <StyledImgCard src={profileImg} alt="" />
+
+            <StyledNameContainer>
+                <StyledNameText quoteColor={quoteColor}>{cardname}</StyledNameText>
+                <StyledNameText quoteColor={quoteColor}>Verified Graduate</StyledNameText>
+            </StyledNameContainer>
+            
+        </StyledUserContainer>
    
-    <p>{quote}</p>
-    <p>{fullText}</p>
+    <StyledQuote quoteColor={quoteColor}>{quote}</StyledQuote>
+    <StyledText textColor={textColor}>{fullText}</StyledText>
     </StyledCardContainer>
    
     )
