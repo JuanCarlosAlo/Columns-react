@@ -1,12 +1,12 @@
 import { StyledCardContainer } from "./styles"
 
-const CardContainer=({profileImg,Cardname,quote,fullText})=>{
+const CardContainer=({profileImg,cardname,quote,fullText,bgColorCard})=>{
     return(
  
-    <StyledCardContainer>
+    <StyledCardContainer bgColorCard={bgColorCard}>
         <img src={profileImg} alt="" />
         <div>
-            <p>{Cardname}</p>
+            <p>{cardname}</p>
             <p>Verified Graduate</p>
         </div>
    
